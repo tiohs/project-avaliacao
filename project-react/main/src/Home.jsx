@@ -5,9 +5,14 @@ function Home() {
   const { balance } = useContext(BalanceContext);
 
   return (
-    <div>
-      <h2>Saldo Atual</h2>
-      <p>{balance}</p>
+    <div className='home-flex'>
+      <div className='home-card'>
+        <div>
+          <p>Saldo Atual</p>
+          <h2>{balance}</h2>
+        </div>
+        <p>KZ</p>
+      </div>
     </div>
   );
 }

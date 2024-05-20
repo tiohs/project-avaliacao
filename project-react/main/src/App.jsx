@@ -1,17 +1,19 @@
-import { BrowserRouter, Routes, Route, Link  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Transactions from './Transactions';
 import { BalanceContextProvider } from './BalanceContext';
+
+import './App.css';
 
 function NavigationMenu() {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Transactions</Link>
+        <Link to="/">Pagina Inicial</Link>
         </li>
         <li>
-          <Link to="/transactions">Home</Link>
+          <Link to="/transactions">Transações</Link>
         </li>
       </ul>
     </nav>
@@ -21,13 +23,13 @@ function NavigationMenu() {
 function App() {
   return (
     <BalanceContextProvider>
-     <BrowserRouter>
-     <NavigationMenu />
+      <BrowserRouter>
+        <NavigationMenu />
         <Routes>
-          <Route path="/" element={<Transactions />} />
-          <Route path="/transactions" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/transactions" element={<Transactions />} />
         </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>
     </BalanceContextProvider>
   );
 }
